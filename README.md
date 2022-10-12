@@ -2,11 +2,15 @@
 
 # NextGenGlobalPortal
 
-This project was generated using [Nx](https://nx.dev).
+
+
 
 ![graph](https://user-images.githubusercontent.com/81558998/195391356-a95e20fa-a1ff-431c-b90b-15ee41f880d4.png) 
 
-🔎 **Smart, Fast and Extensible Build System**
+
+
+
+This project was generated using [Nx](https://nx.dev).
 
 ## Generate an application
 
