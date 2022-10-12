@@ -1,0 +1,94 @@
+{
+  "name": "comm-suite",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/comm-suite/src",
+  "prefix": "next-gen-global-portal",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/apps/comm-suite",
+        "index": "apps/comm-suite/src/index.html",
+        "main": "apps/comm-suite/src/main.ts",
+        "polyfills": "apps/comm-suite/src/polyfills.ts",
+        "tsConfig": "apps/comm-suite/tsconfig.app.json",
+        "assets": [
+          "apps/comm-suite/src/favicon.ico",
+          "apps/comm-suite/src/assets"
+        ],
+        "styles": ["apps/comm-suite/src/styles.css"],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "fileReplacements": [
+            {
+              "replace": "apps/comm-suite/src/environments/environment.ts",
+              "with": "apps/comm-suite/src/environments/environment.prod.ts"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "comm-suite:build:production"
+        },
+        "development": {
+          "browserTarget": "comm-suite:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "comm-suite:build"
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "apps/comm-suite/**/*.ts",
+          "apps/comm-suite/**/*.html"
+        ]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/apps/comm-suite"],
+      "options": {
+        "jestConfig": "apps/comm-suite/jest.config.ts",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}
