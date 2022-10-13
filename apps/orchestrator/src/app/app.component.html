@@ -1,1 +1,14 @@
-<p>orchestrator</p>
+<main>
+  <h1>ORCHESTRATOR</h1>
+  <div class="content">
+    <next-gen-global-portal-app-navbar
+      [isLogged]="auth.isLogged"
+    ></next-gen-global-portal-app-navbar>
+    <div class="page-content">
+      <router-outlet *ngIf="!loadingRouteConfig; else loading"></router-outlet>
+      <ng-template #loading>
+        <next-gen-global-portal-app-loader></next-gen-global-portal-app-loader>
+      </ng-template>
+    </div>
+  </div>
+</main>

@@ -4,6 +4,23 @@
 
 export const environment = {
   production: false,
+  microfrontends: {
+    login: {
+      remoteEntry: 'http://localhost:4201/remoteEntry.js',
+      remoteName: 'login',
+      exposedModule: ['LoginModule'],
+    },
+    homepage: {
+      remoteEntry: 'http://localhost:4202/remoteEntry.js',
+      remoteName: 'homepage',
+      exposedModule: ['HomepageModule'],
+    },
+    // commSuite: {
+    //   remoteEntry: 'http://localhost:4203/remoteEntry.js',
+    //   remoteName: 'commSuite',
+    //   exposedModule: ['CommSuiteModule'],
+    // },
+  },
 };
 
 /*
