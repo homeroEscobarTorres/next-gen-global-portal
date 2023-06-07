@@ -3,6 +3,7 @@
 # NextGenGlobalPortal
 
 
+This project simulates the use of microfrontends orchestrated by a shell (orchestrator) agnostic.
 
 
 ![graph](https://user-images.githubusercontent.com/81558998/195391356-a95e20fa-a1ff-431c-b90b-15ee41f880d4.png) 
